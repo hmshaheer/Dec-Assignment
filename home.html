@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/0f836b7ab6.js" crossorigin="anonymous"></script>
+        <link rel="shortcut icon" href="images/logo - Copy.png">
+    <style>
+    body{
+        height: 3000px;
+    }
+         header {
+            background-image: url(images/Banner.png);
+            height: 900px;
+            background-size: cover;
+            background-position: center;
+        }
+        .img1 {
+            position: absolute;
+            top: 30px;
+            left: 20px;
+            width: 100px;
+            height: 100px;
+        }
+        .navbar {
+            background-color: transparent;
+            margin-right: 20px;
+        }
+        #carouselExampleIndicators{
+            margin-top: 150px;
+            height: 450px;
+            width: 350px;
+            margin-left: 950px;
+        }
+        .brand-heading{
+            font-size: 100px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            text-align: left;
+            margin-left: 50px;
+            color: white;
+            margin-top: -550px;
+        }
+        .brand-paragraph{
+            text-align: justify;
+            color: white;
+            width: 700px;
+            margin-left: 50px;
+           font-size: 25px;
+           margin-top: 50px;
+        }
+          /* Tab container */
+          .tabs {
+            display: flex;
+            background-color: #333;
+        }
+
+        /* Tab buttons */
+        .tab-button {
+            flex: 1;
+            padding: 15px;
+            text-align: center;
+            background-color: #333;
+            color: white;
+            cursor: pointer;
+            border: 1px solid #444;
+            font-size: 16px;
+        }
+
+        .tab-button:hover {
+            background-color: #575757;
+        }
+
+        /* Active tab style */
+        .active-tab {
+            background-color: #c40404;
+        }
+
+        /* Tab content container */
+        .tab-content {
+            padding: 20px;
+            background-color: white;
+            border-top: 1px solid #ddd;
+        }
+
+        .tab-pane {
+            display: none;
+        }
+
+        .tab-pane.active {
+            display: block;
+        }
+        .ListProduct {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.ListProduct .item {
+    display: flex; /* Add flexbox */
+    flex-direction: column; /* Align items vertically */
+    justify-content: space-between; /* Distribute space evenly */
+    background-color: transparent;
+    padding: 20px;
+    border-radius: 20px;
+    border: 5px solid white;
+    height: 100%; /* Ensure items take full height */
+}
+
+.ListProduct .item img {
+    width: 100%;
+    filter: drop-shadow(0 30px 20px #0009);
+}
+
+.ListProduct .item h2 {
+    font-weight: 500;
+    font-size: large;
+    margin: 0; /* Remove default margin */
+}
+
+.ListProduct .item .price {
+    letter-spacing: 1px;
+    font-size: small;
+    font-weight: bolder;
+    color: red;
+}
+    </style>
+</head>
+<body class="bg-dark">
+    <header>
+       
+        <div class="d-flex align-items-center justify-content-between">
+            <img src="images/logo.png" style="border-radius: 50%;" class="img1 img-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button> 
+        </div> 
+        <nav class="navbar navbar-expand-md navbar-dark ">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active"><a class="nav-link" href="home.html"><b>Home</b></a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"><b>Category</b></a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="category1.html" target="_blank"></a></li>
+                                <li><a class="dropdown-item" href="category2.html" target="_blank">Suv</a></li>
+                                <li><a class="dropdown-item" href="category3.html" target="_blank">Sedan</a></li>
+                                <li><a class="dropdown-item" href="category4.html" target="_blank">Hybrid</a></li>
+                                <li><a class="dropdown-item" href="category5.html" target="_blank">Electric</a></li>
+                                <li><a class="dropdown-item" href="category6.html" target="_blank">Luxury</a></li>
+                                <li><a class="dropdown-item" href="category6.html" target="_blank">Convertible</a></li>
+                                <li><a class="dropdown-item" href="category6.html" target="_blank">Super</a></li>
+                                <li><a class="dropdown-item" href="category6.html" target="_blank">Racing</a></li>
+                                <li><a class="dropdown-item" href="category6.html" target="_blank">Off Road</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item "><a class="nav-link" href="About Us.html"  target="_blank"><b>About Us</b></a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"><b>Brands</b></a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="brand1.html" target="_blank">Toyota</a></li>
+                                <li><a class="dropdown-item" href="brand2.html" target="_blank">Honda</a></li>
+                                <li><a class="dropdown-item" href="brand 3.html" target="_blank">Hyundai</a></li>
+                                <li><a class="dropdown-item" href="brand4.html" target="_blank">Suzuki</a></li>
+                                <li><a class="dropdown-item" href="brand4.html" target="_blank">Kia</a></li>
+                                <li><a class="dropdown-item" href="brand4.html" target="_blank">Changan</a></li>
+                                <li><a class="dropdown-item" href="brand4.html" target="_blank">BMW</a></li>
+                                <li><a class="dropdown-item" href="brand4.html" target="_blank">Mercedes</a></li>
+                                <li><a class="dropdown-item" href="brand4.html" target="_blank">Audi</a></li>
+                                <li><a class="dropdown-item" href="brand4.html" target="_blank">Nissan</a></li>
+                                <li><a class="dropdown-item" href="brand4.html" target="_blank">MG</a></li>
+                                <li><a class="dropdown-item" href="brand4.html" target="_blank">Ferrari</a></li>
+                                <li><a class="dropdown-item" href="brand4.html" target="_blank">Porsche</a></li>
+                                <li><a class="dropdown-item" href="brand4.html" target="_blank">Lexus</a></li>
+                                <li><a class="dropdown-item" href="brand4.html" target="_blank">Bently</a></li>
+                                <li><a class="dropdown-item" href="brand4.html" target="_blank">Rolls-Royce</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    </header>
+    
+     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5" aria-label="Slide 6"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="6" aria-label="Slide 7"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="7" aria-label="Slide 8"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="8" aria-label="Slide 9"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="9" aria-label="Slide 10"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="10" aria-label="Slide 11"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="11" aria-label="Slide 12"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="14" aria-label="Slide 15"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="15" aria-label="Slide 16"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="16" aria-label="Slide 17"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="17" aria-label="Slide 18"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="18" aria-label="Slide 19"></button>
+
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="images/Toyota.jfif" class="d-block w-100" alt="Carousel Image 1">
+            </div>
+            <div class="carousel-item ">
+                <img src="images/Honda.png" class="d-block w-100" alt="Carousel Image 2">
+            </div>
+            <div class="carousel-item">
+                <img src="images/Hyundai.jfif" class="d-block w-100" alt="Carousel Image 3">
+            </div>
+            <div class="carousel-item">
+                <img src="images/Suzuki.png" class="d-block w-100" alt="Carousel Image 4">
+            </div>
+            <div class="carousel-item">
+                <img src="images/Kia.jfif" class="d-block w-100" alt="Carousel Image 5">
+            </div>
+            <div class="carousel-item">
+                <img src="images/Changan.png" class="d-block w-100" alt="Carousel Image 6">
+            </div>
+            <div class="carousel-item">
+                <img src="images/BMW.jfif" class="d-block w-100" alt="Carousel Image 7">
+            </div>
+            <div class="carousel-item">
+                <img src="images/Mercedes.jfif" class="d-block w-100" alt="Carousel Image 8">
+            </div>
+            <div class="carousel-item">
+                <img src="images/Audi.png" class="d-block w-100" alt="Carousel Image 9">
+            </div>
+            <div class="carousel-item">
+                <img src="images/Nissan.jfif" class="d-block w-100" alt="Carousel Image 10">
+            </div>
+            <div class="carousel-item">
+                <img src="images/MG.jfif" class="d-block w-100" alt="Carousel Image 11">
+            </div>
+            <div class="carousel-item">
+                <img src="images/Ferrari.png" class="d-block w-100" alt="Carousel Image 14">
+            </div>
+            <div class="carousel-item">
+                <img src="images/Porsche.png" class="d-block w-100" alt="Carousel Image 15">
+            </div>
+            <div class="carousel-item">
+                <img src="images/Lexus.png" class="d-block w-100" alt="Carousel Image 16">
+            </div>
+            <div class="carousel-item">
+                <img src="images/Bently.png" class="d-block w-100" alt="Carousel Image 17">
+            </div>
+            <div class="carousel-item">
+                <img src="images/Rolls Royce.png" class="d-block w-100" alt="Carousel Image 18">
+            </div>
+          
+        </div>
+        <button class="carousel-control-prev " style="color: black;" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next " style="color: black;" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+<div class="brand-heading">
+    <h1><i>Explore Our Trusted Brands</i></h1>
+</div>
+<div class="brand-paragraph">
+    <p>At Car Media, we proudly feature a diverse selection of the world’s most renowned automotive brands. From the
+    reliability and innovation of Toyota, Honda, and Hyundai to the luxury and performance of BMW, Mercedes, Audi, and
+    Porsche, our collection covers every style and preference. Whether you're looking for cutting-edge technology from
+    brands like Nissan and Kia, or the elegance of high-end marques like Ferrari, Rolls-Royce, and Bentley, we offer
+    something for every car enthusiast. Discover top-tier vehicles from Suzuki, Changan, MG, Peugeot, Chevrolet, Lexus,
+    Jaguar, and more. Whatever your driving needs, we have the perfect brand for you.</p>
+</div>
+<br><br><br>
+<div class="tabs">
+    <div class="tab-button active-tab" onclick="showTab('most-awaited')">Most Popular Cars</div>
+    <div class="tab-button" onclick="showTab('most-popular')">Luxury Cars</div>
+    <div class="tab-button" onclick="showTab('latest')">Super Cars</div>
+</div>
+
+<div class="tab-content bg-dark">
+    <div id="most-awaited" class="tab-pane active ">
+ <div class="ListProduct">
+    <div class="item">
+        <img src="images/Fortuner white.png" alt="">
+        <h2 class="text-white">Fortuner</h2>
+        <div class="price">$2000</div>
+    </div>
+    <div class="item">
+        <img src="images/Revo White.png" alt="">
+        <h2 class="text-white">Revo</h2>
+        <div class="price">$2000</div>
+    </div>
+    <div class="item">
+        <img src="images/Land Cruiser.png" alt="">
+        <h2 class="text-white">Land Cruiser</h2>
+        <div class="price">$2000</div>
+    </div>
+    <div class="item">
+        <img src="images/Sportage.png" alt="">
+        <h2 class="text-white">Sportage</h2>
+        <div class="price">$2000</div>
+    </div>
+    <div class="item">
+        <img src="images/Tucson.png" alt="">
+        <h2 class="text-white">Tucson</h2>
+        <div class="price">$2000</div>
+    </div>
+    <div class="item">
+        <img src="images/Hector.png" alt="">
+        <h2 class="text-white">Hector</h2>
+        <div class="price">$2000</div>
+    </div>
+    <div class="item">
+        <img src="images/Acord.png" alt="">
+        <h2 class="text-white">Acord</h2>
+        <div class="price">$2000</div>
+    </div>
+    <div class="item">
+        <img src="images/Alsvin.png" alt="">
+        <h2 class="text-white">Alsvin</h2>
+        <div class="price">$2000</div>
+    </div>
+    <div class="item">
+        <img src="images/BR-V.png" alt="">
+        <h2 class="text-white">BR-V</h2>
+        <div class="price">$2000</div>
+    </div>
+    <div class="item">
+        <img src="images/Civic.png" alt="">
+        <h2 class="text-white">Civic</h2>
+        <div class="price">$2000</div>
+    </div>
+    <div class="item">
+        <img src="images/City.png" alt="">
+        <h2 class="text-white">City</h2>
+        <div class="price">$2000</div>
+    </div>
+    <div class="item">
+        <img src="images/Corolla white.png" alt="">
+        <h2 class="text-white">Corolla</h2>
+        <div class="price">$2000</div>
+    </div>
+    <div class="item">
+        <img src="images/Elantra.png" alt="">
+        <h2 class="text-white">Elantra</h2>
+        <div class="price">$2000</div>
+    </div>
+    <div class="item">
+        <img src="images/Yaris White.png" alt="">
+        <h2 class="text-white">Yaris</h2>
+        <div class="price">$2000</div>
+    </div>
+    <div class="item">
+        <img src="images/Wagon R.png" alt="">
+        <h2 class="text-white">Wagon R</h2>
+        <div class="price">$2000</div>
+    </div>
+    <div class="item">
+        <img src="images/Alto.png" alt="">
+        <h2 class="text-white">Alto</h2>
+        <div class="price">$2000</div>
+    </div>
+ </div>     
+    </div>
+    <div id="most-popular" class="tab-pane">
+        <div class="ListProduct">
+            <div class="item">
+                <img src="images/458.png" alt="">
+                <h2 class="text-white">458</h2>
+                <div class="price">$3000</div>
+            </div>
+            <div class="item">
+                <img src="images/911.png" alt="">
+                <h2 class="text-white">911</h2>
+                <div class="price">$3000</div>
+            </div> 
+             <div class="item">
+                <img src="images/A6.png" alt="">
+                <h2 class="text-white">A6</h2>
+                <div class="price">$3000</div>
+            </div>
+            <div class="item">
+                <img src="images/Cullinan.png" alt="">
+                <h2 class="text-white">Cullinan</h2>
+                <div class="price">$3000</div>
+            </div>  <div class="item">
+                <img src="images/E-Class.png" alt="">
+                <h2 class="text-white">E-class</h2>
+                <div class="price">$3000</div>
+            </div>
+            <div class="item">
+                <img src="images/ES.png" alt="">
+                <h2 class="text-white">ES</h2>
+                <div class="price">$3000</div>
+            </div>
+            <div class="item">
+                <img src="images/F8.png" alt="">
+                <h2 class="text-white">F8</h2>
+                <div class="price">$3000</div>
+            </div>
+            <div class="item">
+                <img src="images/GLC.png" alt="">
+                <h2 class="text-white">GLC</h2>
+                <div class="price">$3000</div>
+            </div>
+            <div class="item">
+                <img src="images/GT-R.png" alt="">
+                <h2 class="text-white">GT-R</h2>
+                <div class="price">$3000</div>
+            </div>
+            <div class="item">
+                <img src="images/LX.png" alt="">
+                <h2 class="text-white">LX</h2>
+                <div class="price">$3000</div>
+            </div>
+            <div class="item">
+                <img src="images/Phantom.png" alt="">
+                <h2 class="text-white">Phantom</h2>
+                <div class="price">$3000</div>
+            </div>
+            <div class="item">
+                <img src="images/Portofino.png" alt="">
+                <h2 class="text-white">Portofino</h2>
+                <div class="price">$3000</div>
+            </div>
+            <div class="item">
+                <img src="images/Q7.png" alt="">
+                <h2 class="text-white">Q7</h2>
+                <div class="price">$3000</div>
+            </div>
+            <div class="item">
+                <img src="images/S3.png" alt="">
+                <h2 class="text-white">S3</h2>
+                <div class="price">$3000</div>
+            </div>
+            <div class="item">
+                <img src="images/S5.png" alt="">
+                <h2 class="text-white">S5</h2>
+                <div class="price">$3000</div>
+            </div>
+            <div class="item">
+                <img src="images/S-Class.png" alt="">
+                <h2 class="text-white">S-Class</h2>
+                <div class="price">$3000</div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<section id="footer">
+    <footer class="bg-dark text-white pt-5 pb-4">
+      <div class="container text-center text-md-left">
+      <div class="row text-center text-md-left">       
+          <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+          <h5 class=" mb-4 font-weight-bold " style="color: rgb(175, 0, 0);">CarMedia</h5>
+          <p style="text-align: left;">Welcome to Car Media, your ultimate destination for all things automotive! Explore a wide selection of top car brands, from luxury to performance to everyday vehicles. Whether you're looking to buy, sell, or just browse, we offer an extensive range of categories, from new and used cars to accessories and reviews. Find the perfect ride for your lifestyle with ease and confidence!</p>
+          </div>
+    
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+              <h5 class="text mb-4 font-weight-bold " style="color: rgb(175, 0, 0);">Category</h5>
+              <p>
+                  <a href="category1.html" target="_blank" class="
+                  text-white" style="text-decoration: none;">Suv</a>
+              </p>
+    
+              <p>
+                  <a href="category2.html" target="_blank" class="
+                  text-white" style="text-decoration: none;">Sedan</a>
+              </p>
+    
+              <p>
+                  <a href="category3.html" target="_blank" class="
+                  text-white" style="text-decoration: none;">Electric</a>
+              </p>
+    
+              <p>
+                  <a href="category4.html" target="_blank" class="
+                  text-white" style="text-decoration: none;">Luxury</a>
+              </p>
+    
+    
+              <p>
+                  <a href="category5.html" target="_blank" class="
+                  text-white" style="text-decoration: none;">Convertible</a>
+              </p>
+    
+              <p>
+                  <a href="category6.html" target="_blank" class="
+                  text-white" style="text-decoration: none;">Super</a>
+              </p>
+
+              <p>
+                <a href="category6.html" target="_blank" class="
+                text-white" style="text-decoration: none;">Racing</a>
+            </p>
+
+            <p>
+                <a href="category6.html" target="_blank" class="
+                text-white" style="text-decoration: none;">Off Road</a>
+            </p>
+    
+          </div>
+    
+    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+    <h5 class=" mb-4 font-weight-bold " style="color: rgb(175, 0, 0);">Brands</h5>
+    <p>
+    <a href="brand1.html" target="_blank" class="
+    text-white" style="text-decoration: none;">Toyota</a>
+    </p>
+    
+    <p>
+    <a href="brand2.html" target="_blank" class="
+    text-white" style="text-decoration: none;">Honda</a>
+    </p>
+    
+    <p>
+    <a href="brand 3.html" target="_blank" class="
+    text-white" style="text-decoration: none;">Hyundai</a>
+    </p>
+    
+    <p>
+      <a href="brand4.html" target="_blank" class="
+      text-white" style="text-decoration: none;">Suzuki</a>
+      </p>
+    
+      <p>
+        <a href="brand1.html" target="_blank" class="
+        text-white" style="text-decoration: none;">Kia</a>
+        </p>
+        
+        <p>
+        <a href="brand2.html" target="_blank" class="
+        text-white" style="text-decoration: none;">Changan</a>
+        </p>
+        
+        <p>
+        <a href="brand 3.html" target="_blank" class="
+        text-white" style="text-decoration: none;">BMW</a>
+        </p>
+        
+        <p>
+          <a href="brand4.html" target="_blank" class="
+          text-white" style="text-decoration: none;">Mercedes</a>
+          </p>
+
+        
+                    
+    </div>
+    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+        <h5 class=" mb-4 font-weight-bold " style="color: rgb(175, 0, 0);">More Brands</h5>
+        <p>
+            <a href="brand1.html" target="_blank" class="
+            text-white" style="text-decoration: none;">Audi</a>
+            </p>
+            
+            <p>
+            <a href="brand2.html" target="_blank" class="
+            text-white" style="text-decoration: none;">Nissan</a>
+            </p>
+            
+            <p>
+            <a href="brand 3.html" target="_blank" class="
+            text-white" style="text-decoration: none;">Ferrari</a>
+            </p>
+            
+            <p>
+              <a href="brand4.html" target="_blank" class="
+              text-white" style="text-decoration: none;">MG</a>
+              </p>
+    
+              <p>
+                <a href="brand1.html" target="_blank" class="
+                text-white" style="text-decoration: none;">Porsche</a>
+                </p>
+                
+                <p>
+                <a href="brand2.html" target="_blank" class="
+                text-white" style="text-decoration: none;">Lexus</a>
+                </p>
+                
+                <p>
+                <a href="brand 3.html" target="_blank" class="
+                text-white" style="text-decoration: none;">Bentley</a>
+                </p>
+                
+                <p>
+                  <a href="brand4.html" target="_blank" class="
+                  text-white" style="text-decoration: none;">Rolls-Royce</a>
+                  </p>
+    
+                  <p>
+                 
+            
+                        
+        </div>
+   
+    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+    <h5 class=" mb-4 font-weight-bold"style="color: rgb(175, 0, 0);">Contact us</h5>
+    <p>
+     <i class="fa-solid fa-house"></i>Aptech, North Nazimabad, Karachi,Pakistan.
+    </p>
+    <p>
+      <i class="fa-solid fa-envelope"></i>JensonDecors@gmail.com
+    </p>
+    <p>
+      <i class="fa-solid fa-phone"></i>111-278324
+    </p>
+    <p>
+      <i class="fa-solid fa-print"></i>111-278324
+    </p>
+    </div>
+      </div>
+      <hr class="mb-4">
+      <div class="row align-items center">
+       <div class="col-md-6 col-lg-12 ">
+       <p>Copyright ©2024 All rights reserved by:
+          <a href="" style="text-decoration: none;">
+              <strong style="color: rgb(175, 0, 0);">Car</strong><strong style="color: rgb(255, 253, 253);">Media</strong>
+          </a></p>
+       </div>
+    
+     <div class="col-md-5 col-lg-4">
+      <div class="text-center text-md-right">
+        <ul class="list-unstyled list-inline ">
+          <li class="list-inline-item">
+              <a href="https://www.facebook.com/login.php/" target="_blank" class="btn-floating btn-sm text-white" style="font-size: 23px;"><i class="fa-brands fa-facebook"></i></a>
+          </li>
+          <li class="list-inline-item">
+              <a href="https://www.instagram.com/accounts/login/?hl=en" target="_blank" class="btn-floating btn-sm text-white" style="font-size: 23px;"><i class="fa-brands fa-instagram"></i></a>
+          </li>
+          <li class="list-inline-item">
+              <a href="https://www.linkedin.com/login" target="_blank" class="btn-floating btn-sm text-white" style="font-size: 23px;"><i class="fa-brands fa-linkedin"></i></a>
+          </li>
+          <li class="list-inline-item">
+              <a href="https://www.youtube.com/" target="_blank" class="btn-floating btn-sm text-white" style="font-size: 23px;"><i class="fa-brands fa-youtube"></i></a>
+          </li>
+        </ul>
+      </div>
+     </div>
+    
+      </div>
+      </div>
+    </footer>
+    </section>
+    
+<script>
+    // Function to switch tabs
+    function showTab(tabId) {
+        // Remove active class from all tabs
+        const tabs = document.querySelectorAll('.tab-button');
+        tabs.forEach(tab => tab.classList.remove('active-tab'));
+
+        // Add active class to the clicked tab
+        const activeTab = document.querySelector(`.tab-button[onclick="showTab('${tabId}')"]`);
+        activeTab.classList.add('active-tab');
+
+        // Hide all tab content
+        const tabPanes = document.querySelectorAll('.tab-pane');
+        tabPanes.forEach(pane => pane.classList.remove('active'));
+
+        // Show the content for the clicked tab
+        const activePane = document.getElementById(tabId);
+        activePane.classList.add('active');
+    }
+</script>
+
+</body>
+</html>
