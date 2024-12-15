@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Categories Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1c1c1c; /* Dark background */
+            color: #fff;
+        }
+
+        header {
+            background-color: #222; /* Darker header background */
+            color: #e10600; /* Consistent red color */
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+        }
+
+        .welcome-section {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            background-image: url('https://images.pexels.com/photos/3769747/pexels-photo-3769747.jpeg?cs=srgb&dl=pexels-olly-3769747.jpg&fm=jpg');
+            background-size: cover;
+            background-position: center;
+            filter: brightness(0.7);
+        }
+
+        @keyframes fadeInSlideUp {
+            0% {
+                opacity: 0;
+                transform: translate(-50%, -60%);
+            }
+            100% {
+                opacity: 1;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        .welcome-message {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            animation: fadeInSlideUp 1s ease-out;
+        }
+
+        .welcome-message h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-button {
+            background-color: #e10600;
+            color: white;
+            font-size: 1.2rem;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #b40404;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: #e10600; /* Consistent red color */
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .category {
+            background-color: #333;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+            transform: scale(1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .category:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .category img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: opacity 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+        }
+
+        .category:hover img {
+            opacity: 0.8;
+        }
+
+        .category-info {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .category-info h3 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #e10600; /* Consistent red color */
+            margin-bottom: 10px;
+        }
+
+        .category-info p {
+            font-size: 1rem;
+            color: #ccc;
+            margin-bottom: 20px;
+        }
+
+        .category {
+    background-color: #333;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Enhanced shadow */
+    transform: scale(1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px rgba(255, 21, 21, 0.945); /* Stronger shadow on hover */
+}
+
+
+        .search-container {
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .search-container input {
+            width: 50%;
+            padding: 10px;
+            font-size: 1rem;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-right: 10px;
+            transition: all 0.3s ease;
+            color: #333;
+        }
+
+        .search-container input:focus {
+            outline: none;
+            border-color: #e10600; /* Consistent red color */
+        }
+
+        .search-container button {
+            padding: 10px 20px;
+            background-color: #e10600;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .search-container button:hover {
+            background-color: #b40404;
+        }
+
+        .category-descriptions {
+            text-align: center;
+            max-width: 800px;
+            margin: 40px auto;
+            background-color: #333;
+            color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .category-descriptions h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #e10600; /* Consistent red color */
+        }
+
+        .description {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .learn-more-btn {
+            background-color: #e10600;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .learn-more-btn:hover {
+            background-color: #b40404;
+            transform: scale(1.05);
+        }
+
+
+       
+        .search-bar {
+    display: flex;
+    justify-content: center; /* Horizontally center the content */
+    align-items: center; /* Vertically center the content */
+    max-width: 900px;
+    width: 100%;
+    background-color: #2c2c2c;
+    border-radius: 5px;
+    padding: 10px 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 0 auto; /* Center the search bar itself on the page */
+    margin-bottom: 20px;
+}
+
+.search-bar input[type="text"] {
+    width: 80%; /* Adjust the input width */
+    padding: 10px;
+    border: 1px solid #494949;
+    border-radius: 4px;
+    font-size: 16px;
+    outline: none;
+}
+
+.search-bar input[type="text"]:focus {
+    border-color: #e10600;
+}
+
+.search-bar button {
+    background-color: #e10600;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.search-bar button:hover {
+    background-color: #b40404;
+}
+
+.filters {
+    display: flex;
+    justify-content: center; /* Horizontally center the content */
+    align-items: center; /* Vertically center the content */
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto; /* Center the filters container itself on the page */
+    background-color: #272727;
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.filters .category-filter,
+.filters .price-range {
+    margin-right: 20px; /* Add space between filter sections */
+}
+
+.filters select, .filters input[type="range"] {
+    padding: 10px;
+    border: 1px solid #444444;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.filters label {
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+
+/* Contact Form Container */
+.contact-form-container {
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: #333;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1s ease-out;
+}
+
+/* Header for the Contact Form */
+.contact-form-container h2 {
+    font-size: 2rem;
+    color: #e10600; /* Red color for heading */
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Form Groups */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-size: 1.1rem;
+    color: #ccc;
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Input Fields and Textarea */
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #444;
+    background-color: #2c2c2c;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #e10600;
+    box-shadow: 0 0 10px rgba(225, 6, 0, 0.7);
+}
+
+/* Button Styles */
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.2rem;
+    background-color: #e10600;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #b40404;
+    transform: scale(1.05);
+}
+
+/* Hover and Focus Effects */
+.contact-form input:hover,
+.contact-form textarea:hover {
+    border-color: #e10600;
+    background-color: #333;
+}
+
+/* Form Animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #222;
+    color: #ccc;
+    padding: 40px 0;
+    font-size: 1rem;
+    animation: fadeInFooter 1.5s ease-out;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 30px;
+}
+
+.footer h3 {
+    color: #e10600; /* Red color for headings */
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+/* Contact Info */
+.contact-info p {
+    margin-bottom: 8px;
+}
+
+/* Information Links */
+.info-links ul, .social-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.info-links li, .social-links li {
+    margin-bottom: 10px;
+}
+
+.info-links a, .social-links a {
+    text-decoration: none;
+    color: #ccc;
+    transition: color 0.3s ease;
+    font-size: 1.1rem;
+}
+
+.info-links a:hover, .social-links a:hover {
+    color: #e10600; /* Hover effect for links */
+    text-decoration: underline;
+}
+
+/* Social Links */
+.social-links a {
+    font-weight: bold;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    text-align: center;
+    color: #bbb;
+    padding-top: 20px;
+    font-size: 0.9rem;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+/* Animation for Footer */
+@keyframes fadeInFooter {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hover Effects for Social Icons */
+.social-links a.facebook:hover {
+    color: #3b5998;
+}
+
+.social-links a.twitter:hover {
+    color: #1da1f2;
+}
+
+.social-links a.instagram:hover {
+    color: #e4405f;
+}
+
+.social-links a.linkedin:hover {
+    color: #0077b5;
+}
+
+
+        .navbar {
+            display: flex;
+            justify-content: space-between; /* Space between logo and nav items */
+            align-items: center;
+            background-color: rgb(27, 27, 27);
+            padding: 1rem;
+            border-bottom: 2px solid #ff0000; /* Green border */
+        }
+
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+            margin-right: auto; /* Keeps the logo to the left */
+        }
+
+        .navbar .logo img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .navbar .nav-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-grow: 1; /* Center the links in the remaining space */
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: #ffffff; /* Dark text for better contrast */
+            font-size: 1.2rem;
+            margin: 0 15px;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            color: #ff0000; /* Green color on hover */
+        }
+
+        .navbar a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 0;
+            height: 2px;
+            background-color: #ff0000; /* Green underline */
+            transition: width 0.4s ease;
+        }
+
+        .navbar a:hover::after {
+            width: 100%;
+        }
+
+        .navbar a {
+            transition: transform 0.3s ease;
+        }
+
+        .navbar a:hover {
+            transform: translateY(-3px);
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <!-- Logo -->
+        <div class="logo">
+            <img src="https://img.icons8.com/?size=48&id=YXWkZzb4J3aD&format=png" alt="Logo"> <!-- Replace with your logo image -->
+            <span style="font-size: 1.5rem; color: #c93434d3;">Categories</span>
+        </div>
+
+        <!-- Navbar Links -->
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Service</a>
+            <a href="#">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Welcome Section -->
+    <div class="welcome-section">
+        <div class="welcome-message">
+            <h2>Welcome to Our Online Store</h2>
+            <button class="cta-button">Shop Now</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>Popular Categories</h2>
+
+        <!-- Search Bar Section -->
+        <div class="search-container">
+            <input type="text" placeholder="Search categories..." id="search-bar">
+            <button onclick="searchCategories()">Search</button>
+        </div>
+
+        <div class="categories">
+            <!-- Category 1 -->
+            <div class="category">
+                <img src="https://www.shutterstock.com/image-photo/fashionable-clothes-boutique-store-london-600nw-589577570.jpg" alt="Clothing">
+                <div class="category-info">
+                    <h3>Clothing</h3>
+                    <p>Discover a wide range of fashion for men, women, and kids. Latest trends for every occasion.</p>
+                    <button class="cta-button">Shop Now</button>
+                </div>
+            </div>
+
+            <!-- Category 2 -->
+            <div class="category">
+                <img src="https://i.pinimg.com/736x/51/d3/88/51d38806d50482762c700eca5717a32f.jpg" alt="Electronics">
+                <div class="category-info">
+                    <h3>Electronics</h3>
+                    <p>Shop the latest gadgets, mobiles, and accessories from top brands.</p>
+                    <button class="cta-button">Explore Now</button>
+                </div>
+            </div>
+
+            <!-- Category 3 -->
+            <div class="category">
+                <img src="https://assets.architecturaldigest.in/photos/624c2654cf7483eb90e638d6/4:3/w_1440,h_1080,c_limit/Books-1.jpg" alt="Books">
+                <div class="category-info">
+                    <h3>Books</h3>
+                    <p>Browse our collection of books from all genres. Find your next favorite read.</p>
+                    <button class="cta-button">View Collection</button>
+                </div>
+            </div>
+
+            <!-- Category 4 -->
+            <div class="category">
+                <img src="https://www.ishir.com/wp-content/uploads/2023/06/AI-tools-for-software-development.jpg" alt="AI Tools">
+                <div class="category-info">
+                    <h3>AI Tools</h3>
+                    <p>Explore the latest in artificial intelligence tools and technologies to enhance your work.</p>
+                    <button class="cta-button">Explore Now</button>
+                </div>
+            </div>
+
+            <!-- Category 5 -->
+            <div class="category">
+                <img src="https://thumbs.dreamstime.com/b/interior-design-cabinet-mock-up-photo-frame-elegant-accessories-beautiful-plants-modern-home-decor-minimalistic-interior-322727138.jpg" alt="Home Decor">
+                <div class="category-info">
+                    <h3>Home Decor</h3>
+                    <p>Decorate your space with our stylish and functional furniture and home accessories.</p>
+                    <button class="cta-button">Shop Now</button>
+                </div>
+            </div>
+
+            <!-- Category 6 -->
+            <div class="category">
+                <img src="https://st4.depositphotos.com/1005563/25369/i/450/depositphotos_253697550-stock-photo-award-winning-championship-concept-trophy.jpg" alt="Sports">
+                <div class="category-info">
+                    <h3>Sports</h3>
+                    <p>Get the best sports equipment, accessories, and activewear for every sport.</p>
+                    <button class="cta-button">Explore Now</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Category Descriptions Section -->
+    <div class="category-descriptions">
+        <h2>Category Descriptions</h2>
+        <p class="description">
+            Explore a wide variety of categories, each offering a unique selection of products. Whether you're looking for the latest tech gadgets, fashion trends, or home essentials, we've got something for everyone.
+        </p>
+        <button class="learn-more-btn">Learn More</button>
+    </div>
+
+    <!-- Search Bar -->
+    <div class="search-bar">
+        <input type="text" id="search" placeholder="Search for products...">
+        <button onclick="searchProducts()">Search</button>
+    </div>
+
+    <!-- Filters Section -->
+    <div class="filters">
+        <!-- Category Filter -->
+        <div class="category-filter">
+            <label for="category">Category:</label>
+            <select id="category">
+                <option value="all">All</option>
+                <option value="electronics">Electronics</option>
+                <option value="clothing">Clothing</option>
+                <option value="books">Books</option>
+            </select>
+        </div>
+
+        <!-- Price Range Filter -->
+        <div class="price-range">
+            <label for="price-range">Price Range: $<span id="price-value">0</span></label>
+            <input type="range" id="price-range" min="0" max="500" step="10" value="0" onchange="updatePriceValue()">
+        </div>
+    </div>
+
+
+    <!-- Contact Form Section -->
+<div class="contact-form-container">
+    <h2>Contact Us</h2>
+    <form class="contact-form">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        </div>
+        <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Write your message" required></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Submit</button>
+    </form>
+</div>
+
+  
+<!-- Footer Section -->
+<footer class="footer">
+    <div class="footer-content">
+        <!-- Contact Info -->
+        <div class="contact-info">
+            <h3>Contact Us</h3>
+            <p><strong>Phone:</strong> +1 123 456 7890</p>
+            <p><strong>Email:</strong> info@onlinestore.com</p>
+            <p><strong>Address:</strong> 123 Online Store St, City, Country</p>
+        </div>
+
+        <!-- Information Links -->
+        <div class="info-links">
+            <h3>Information</h3>
+            <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Returns & Exchanges</a></li>
+            </ul>
+        </div>
+
+        <!-- Social Links -->
+        <div class="social-links">
+            <h3>Follow Us</h3>
+            <ul>
+                <li><a href="#" class="facebook">Facebook</a></li>
+                <li><a href="#" class="twitter">Twitter</a></li>
+                <li><a href="#" class="instagram">Instagram</a></li>
+                <li><a href="#" class="linkedin">LinkedIn</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+        <p>&copy; 2024 Online Store. All Rights Reserved.</p>
+    </div>
+</footer>
+
+    <script>
+        // Simple Search Functionality (Just for demo, does not filter)
+        function searchCategories() {
+            const searchQuery = document.getElementById("search-bar").value;
+            alert("You searched for: " + searchQuery);
+        }
+
+        // Function to handle search
+        function searchProducts() {
+            const searchQuery = document.getElementById('search').value;
+            alert("You searched for: " + searchQuery);
+        }
+
+        // Function to update the price range value
+        function updatePriceValue() {
+            const priceValue = document.getElementById('price-range').value;
+            document.getElementById('price-value').textContent = priceValue;
+        }
+    </script>
+
+</body>
+</html>
